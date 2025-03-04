@@ -16,8 +16,9 @@ def get_fake_data():
 
 data = get_fake_data()
 
-# Auto-refresh every 5 seconds
-st.autorefresh(interval=5 * 1000)  # 5 seconds refresh interval
+# Auto-refresh every 5 seconds (use st.experimental_rerun() to trigger a rerun)
+time.sleep(5)  # Sleep for 5 seconds before rerun
+st.experimental_rerun()  # Trigger a rerun of the script
 
 # Plotly Chart
 fig = go.Figure()
