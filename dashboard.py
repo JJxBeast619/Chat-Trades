@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import requests
 
-# Color themes (CSS styles)
+# Color themes (CSS styles) with full background update
 themes = {
     "Classic Blue": """
         <style>
@@ -12,6 +12,7 @@ themes = {
             .stMetric>div { background-color: #007bff; color: white; }
             .stMarkdown { color: #007bff; }
             .stSidebar { background-color: #003366; color: white; }
+            .css-1d391kg { background-color: #f0f4f8; }  /* Sidebar background */
         </style>
     """,
     "Dark Mode": """
@@ -21,6 +22,7 @@ themes = {
             .stMetric>div { background-color: #1e1e1e; color: #f5f5f5; }
             .stMarkdown { color: #f5f5f5; }
             .stSidebar { background-color: #121212; color: white; }
+            .css-1d391kg { background-color: #121212; }  /* Sidebar background */
         </style>
     """,
     "Sunset Orange": """
@@ -30,6 +32,7 @@ themes = {
             .stMetric>div { background-color: #f44336; color: white; }
             .stMarkdown { color: #f44336; }
             .stSidebar { background-color: #ff7043; color: white; }
+            .css-1d391kg { background-color: #ff7043; }  /* Sidebar background */
         </style>
     """,
     "Forest Green": """
@@ -39,6 +42,7 @@ themes = {
             .stMetric>div { background-color: #388e3c; color: white; }
             .stMarkdown { color: #388e3c; }
             .stSidebar { background-color: #2c6b2f; color: white; }
+            .css-1d391kg { background-color: #2c6b2f; }  /* Sidebar background */
         </style>
     """,
     "Ocean Breeze": """
@@ -48,6 +52,7 @@ themes = {
             .stMetric>div { background-color: #00796b; color: white; }
             .stMarkdown { color: #00796b; }
             .stSidebar { background-color: #004d40; color: white; }
+            .css-1d391kg { background-color: #004d40; }  /* Sidebar background */
         </style>
     """,
     "Purple Haze": """
@@ -57,6 +62,7 @@ themes = {
             .stMetric>div { background-color: #9c27b0; color: white; }
             .stMarkdown { color: #9c27b0; }
             .stSidebar { background-color: #7b1fa2; color: white; }
+            .css-1d391kg { background-color: #7b1fa2; }  /* Sidebar background */
         </style>
     """,
     "Coral Red": """
@@ -66,6 +72,7 @@ themes = {
             .stMetric>div { background-color: #e57373; color: white; }
             .stMarkdown { color: #e57373; }
             .stSidebar { background-color: #f44336; color: white; }
+            .css-1d391kg { background-color: #f44336; }  /* Sidebar background */
         </style>
     """,
     "Mint Green": """
@@ -75,6 +82,7 @@ themes = {
             .stMetric>div { background-color: #4caf50; color: white; }
             .stMarkdown { color: #4caf50; }
             .stSidebar { background-color: #388e3c; color: white; }
+            .css-1d391kg { background-color: #388e3c; }  /* Sidebar background */
         </style>
     """,
     "Lavender Bliss": """
@@ -84,6 +92,7 @@ themes = {
             .stMetric>div { background-color: #8e24aa; color: white; }
             .stMarkdown { color: #8e24aa; }
             .stSidebar { background-color: #7b1fa2; color: white; }
+            .css-1d391kg { background-color: #7b1fa2; }  /* Sidebar background */
         </style>
     """,
     "Golden Yellow": """
@@ -93,6 +102,7 @@ themes = {
             .stMetric>div { background-color: #fbc02d; color: white; }
             .stMarkdown { color: #fbc02d; }
             .stSidebar { background-color: #f57f17; color: white; }
+            .css-1d391kg { background-color: #f57f17; }  /* Sidebar background */
         </style>
     """
 }
