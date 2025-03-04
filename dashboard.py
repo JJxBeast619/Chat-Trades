@@ -9,85 +9,34 @@ st.set_page_config(
     page_title="GBP/JPY Live Trading Dashboard", 
     page_icon="📊", 
     layout="wide", 
-    initial_sidebar_state="expanded"
+    initial_sidebar_state="expanded",
+    theme="dark"  # Using Streamlit's built-in theme options (light/dark)
+)
+
+# Add Baskerville font from Google Fonts
+st.markdown(
+    """
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville&display=swap" rel="stylesheet">
+    <style>
+    body {
+        font-family: 'Baskervville', serif;
+    }
+    </style>
+    """, unsafe_allow_html=True
 )
 
 # Dropdown for theme selection
 theme = st.selectbox("Select Theme", ["Light", "Dark", "Blue", "Purple"])
 
-# Define the theme settings based on selection
+# Define the theme settings based on selection (built-in color handling with Streamlit's theme system)
 if theme == "Light":
-    st.markdown(
-        """
-        <style>
-        body {
-            background-color: #f7f7f7;
-            color: black;
-            font-family: 'Arial', sans-serif;
-        }
-        .stApp {
-            background-color: #f7f7f7;
-        }
-        .stText {
-            color: black;
-        }
-        </style>
-        """, unsafe_allow_html=True
-    )
+    st.session_state.theme_color = "light"
 elif theme == "Dark":
-    st.markdown(
-        """
-        <style>
-        body {
-            background-color: #121212;
-            color: white;
-            font-family: 'Arial', sans-serif;
-        }
-        .stApp {
-            background-color: #121212;
-        }
-        .stText {
-            color: white;
-        }
-        </style>
-        """, unsafe_allow_html=True
-    )
+    st.session_state.theme_color = "dark"
 elif theme == "Blue":
-    st.markdown(
-        """
-        <style>
-        body {
-            background-color: #e0f7fa;
-            color: #00796b;
-            font-family: 'Arial', sans-serif;
-        }
-        .stApp {
-            background-color: #e0f7fa;
-        }
-        .stText {
-            color: #00796b;
-        }
-        </style>
-        """, unsafe_allow_html=True
-    )
+    st.session_state.theme_color = "blue"
 elif theme == "Purple":
-    st.markdown(
-        """
-        <style>
-        body {
-            background-color: #f3e5f5;
-            color: #6a1b9a;
-            font-family: 'Arial', sans-serif;
-        }
-        .stApp {
-            background-color: #f3e5f5;
-        }
-        .stText {
-            color: #6a1b9a;
-        }
-        </style>
-        """, unsafe_allow_html=True
-    )
+    st.session_state.theme_color = "purple"
 
 # Function to simulate live data (replace with real-time data integration later)
 def get_fake_data():
