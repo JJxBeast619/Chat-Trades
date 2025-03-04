@@ -4,7 +4,7 @@ import plotly.graph_objects as go
 import time
 import requests
 
-# Set up the page configuration (theme, title, and favicon) - Move this to the top
+# Set up the page configuration (theme, title, and favicon) - **Must be the first Streamlit call**
 st.set_page_config(
     page_title="GBP/JPY Live Trading Dashboard", 
     page_icon="📊", 
