@@ -14,21 +14,12 @@ def get_fake_data():
         "Price": [150 + i * 0.1 for i in range(50)]
     })
 
-# Check if it's the first time the app is running, or if it should be refreshed
-if "refresh" not in st.session_state:
-    st.session_state.refresh = False
-
-# Simulate refresh cycle
-if st.session_state.refresh:
-    st.session_state.refresh = False
-else:
-    st.session_state.refresh = True
-    # Force a rerun
-    time.sleep(5)  # Sleep before rerun
-    st.experimental_rerun()
-
-# Get data
+# Generate initial data
 data = get_fake_data()
+
+# Button to manually refresh the page (avoiding infinite rerun)
+if st.button('Refresh Data'):
+    st.experimental_rerun()  # Trigger the rerun when button is clicked
 
 # Plotly Chart
 fig = go.Figure()
