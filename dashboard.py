@@ -26,7 +26,7 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-# Streamlit App Title
+# Streamlit App Title with custom font
 st.title("📊 GBP/JPY Live Trading Dashboard")
 
 # Function to simulate live data
@@ -46,20 +46,14 @@ fig.update_layout(title="Live Price Chart", xaxis_title="Time", yaxis_title="Pri
 
 st.plotly_chart(fig)
 
-# Create two columns for horizontal layout
-col1, col2 = st.columns(2)
+# Trading Metrics and Open Trades - Vertical arrangement
+st.subheader("Trading Metrics")
+st.metric(label="Account Balance", value="$10,000")
+st.metric(label="Open P/L", value="$200", delta="+2%")
 
-# Trading Metrics in the first column
-with col1:
-    st.subheader("Trading Metrics")
-    st.metric(label="Account Balance", value="$10,000")
-    st.metric(label="Open P/L", value="$200", delta="+2%")
-
-# Open Trades in the second column
-with col2:
-    st.subheader("Open Trades")
-    trades = pd.DataFrame({"Trade ID": [1, 2], "Type": ["Buy", "Sell"], "Price": [150.5, 151.0], "Profit": [10, -5]})
-    st.dataframe(trades)
+st.subheader("Open Trades")
+trades = pd.DataFrame({"Trade ID": [1, 2], "Type": ["Buy", "Sell"], "Price": [150.5, 151.0], "Profit": [10, -5]})
+st.dataframe(trades)
 
 # Fetch Financial News from API
 def get_forex_news():
