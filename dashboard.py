@@ -9,20 +9,32 @@ st.markdown("""
         /* Preconnect to Google Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap');
         
-        /* Apply the font to title and text */
-        .title {
+        /* Apply the font globally */
+        body {
             font-family: 'Baskervville', serif;
-            font-size: 40px;
-            color: #1f77b4;
         }
 
+        /* Title and subheaders */
+        .title {
+            font-family: 'Baskervville', serif;
+        }
+
+        /* Streamlit metrics */
         .stMetric {
             font-family: 'Baskervville', serif;
         }
 
-        h2 {
+        /* Dataframes */
+        .stDataFrame {
             font-family: 'Baskervville', serif;
         }
+
+        /* Headers (h2 and h3) */
+        h2, h3 {
+            font-family: 'Baskervville', serif;
+        }
+        
+        /* Add specific styling for other text areas if needed */
     </style>
     """, unsafe_allow_html=True)
 
