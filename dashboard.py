@@ -13,6 +13,7 @@ themes = {
             .stMarkdown { color: #007bff; }
             .stSidebar { background-color: #003366; color: white; }
             .css-1d391kg { background-color: #f0f4f8; }  /* Sidebar background */
+            .css-1hynfa0 { background-color: #f0f4f8; }  /* Main content area */
         </style>
     """,
     "Dark Mode": """
@@ -23,6 +24,7 @@ themes = {
             .stMarkdown { color: #f5f5f5; }
             .stSidebar { background-color: #121212; color: white; }
             .css-1d391kg { background-color: #121212; }  /* Sidebar background */
+            .css-1hynfa0 { background-color: #181818; }  /* Main content area */
         </style>
     """,
     "Sunset Orange": """
@@ -33,6 +35,7 @@ themes = {
             .stMarkdown { color: #f44336; }
             .stSidebar { background-color: #ff7043; color: white; }
             .css-1d391kg { background-color: #ff7043; }  /* Sidebar background */
+            .css-1hynfa0 { background-color: #ffe0e0; }  /* Main content area */
         </style>
     """,
     "Forest Green": """
@@ -43,6 +46,7 @@ themes = {
             .stMarkdown { color: #388e3c; }
             .stSidebar { background-color: #2c6b2f; color: white; }
             .css-1d391kg { background-color: #2c6b2f; }  /* Sidebar background */
+            .css-1hynfa0 { background-color: #f0f8f0; }  /* Main content area */
         </style>
     """,
     "Ocean Breeze": """
@@ -53,6 +57,7 @@ themes = {
             .stMarkdown { color: #00796b; }
             .stSidebar { background-color: #004d40; color: white; }
             .css-1d391kg { background-color: #004d40; }  /* Sidebar background */
+            .css-1hynfa0 { background-color: #e0f7fa; }  /* Main content area */
         </style>
     """,
     "Purple Haze": """
@@ -63,6 +68,7 @@ themes = {
             .stMarkdown { color: #9c27b0; }
             .stSidebar { background-color: #7b1fa2; color: white; }
             .css-1d391kg { background-color: #7b1fa2; }  /* Sidebar background */
+            .css-1hynfa0 { background-color: #f3e5f5; }  /* Main content area */
         </style>
     """,
     "Coral Red": """
@@ -73,6 +79,7 @@ themes = {
             .stMarkdown { color: #e57373; }
             .stSidebar { background-color: #f44336; color: white; }
             .css-1d391kg { background-color: #f44336; }  /* Sidebar background */
+            .css-1hynfa0 { background-color: #ffebee; }  /* Main content area */
         </style>
     """,
     "Mint Green": """
@@ -83,6 +90,7 @@ themes = {
             .stMarkdown { color: #4caf50; }
             .stSidebar { background-color: #388e3c; color: white; }
             .css-1d391kg { background-color: #388e3c; }  /* Sidebar background */
+            .css-1hynfa0 { background-color: #e8f5e9; }  /* Main content area */
         </style>
     """,
     "Lavender Bliss": """
@@ -93,6 +101,7 @@ themes = {
             .stMarkdown { color: #8e24aa; }
             .stSidebar { background-color: #7b1fa2; color: white; }
             .css-1d391kg { background-color: #7b1fa2; }  /* Sidebar background */
+            .css-1hynfa0 { background-color: #f3e5f5; }  /* Main content area */
         </style>
     """,
     "Golden Yellow": """
@@ -103,6 +112,7 @@ themes = {
             .stMarkdown { color: #fbc02d; }
             .stSidebar { background-color: #f57f17; color: white; }
             .css-1d391kg { background-color: #f57f17; }  /* Sidebar background */
+            .css-1hynfa0 { background-color: #fff9c4; }  /* Main content area */
         </style>
     """
 }
