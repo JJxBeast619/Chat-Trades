@@ -23,6 +23,7 @@ if theme == "Light":
         body {
             background-color: #f7f7f7;
             color: black;
+            font-family: 'Arial', sans-serif;
         }
         .stApp {
             background-color: #f7f7f7;
@@ -40,6 +41,7 @@ elif theme == "Dark":
         body {
             background-color: #121212;
             color: white;
+            font-family: 'Arial', sans-serif;
         }
         .stApp {
             background-color: #121212;
@@ -57,6 +59,7 @@ elif theme == "Blue":
         body {
             background-color: #e0f7fa;
             color: #00796b;
+            font-family: 'Arial', sans-serif;
         }
         .stApp {
             background-color: #e0f7fa;
@@ -74,6 +77,7 @@ elif theme == "Purple":
         body {
             background-color: #f3e5f5;
             color: #6a1b9a;
+            font-family: 'Arial', sans-serif;
         }
         .stApp {
             background-color: #f3e5f5;
