@@ -6,35 +6,12 @@ import requests
 # Embed Google Font in Streamlit
 st.markdown("""
     <style>
-        /* Preconnect to Google Fonts */
+        /* Apply the Google font Baskervville */
         @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap');
         
-        /* Apply the font globally */
         body {
             font-family: 'Baskervville', serif;
         }
-
-        /* Title and subheaders */
-        .title {
-            font-family: 'Baskervville', serif;
-        }
-
-        /* Streamlit metrics */
-        .stMetric {
-            font-family: 'Baskervville', serif;
-        }
-
-        /* Dataframes */
-        .stDataFrame {
-            font-family: 'Baskervville', serif;
-        }
-
-        /* Headers (h2 and h3) */
-        h2, h3 {
-            font-family: 'Baskervville', serif;
-        }
-        
-        /* Add specific styling for other text areas if needed */
     </style>
     """, unsafe_allow_html=True)
 
@@ -89,4 +66,4 @@ else:
 # Realized Profit Display with custom font
 realized_profit = 500  # Replace with real profit data
 profit_color = "green" if realized_profit >= 0 else "red"
-st.markdown(f"<h2 style='color:{profit_color}; font-family: \"Baskervville\", serif;'>$ {realized_profit}</h2>", unsafe_allow_html=True)
+st.markdown(f"<h2 style='color:{profit_color};'>$ {realized_profit}</h2>", unsafe_allow_html=True)
