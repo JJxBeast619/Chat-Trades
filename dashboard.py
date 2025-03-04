@@ -17,8 +17,7 @@ def get_fake_data():
 data = get_fake_data()
 
 # Auto-refresh every 5 seconds
-st.experimental_rerun()
-time.sleep(5)
+st.autorefresh(interval=5 * 1000)  # 5 seconds refresh interval
 
 # Plotly Chart
 fig = go.Figure()
@@ -62,4 +61,3 @@ profit_color = "green" if realized_profit >= 0 else "red"
 st.markdown(f"<h2 style='color:{profit_color};'>$ {realized_profit}</h2>", unsafe_allow_html=True)
 
 # Future: Connect to MetaTrader 5 to fetch real-time trades and market data
-
