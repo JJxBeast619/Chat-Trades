@@ -3,20 +3,108 @@ import pandas as pd
 import plotly.graph_objects as go
 import requests
 
-# Embed Google Font in Streamlit
-st.markdown("""
-    <style>
-        /* Apply the Google font Baskervville */
-        @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap');
-        
-        body {
-            font-family: 'Baskervville', serif;
-        }
-    </style>
-    """, unsafe_allow_html=True)
+# Color themes (CSS styles)
+themes = {
+    "Classic Blue": """
+        <style>
+            body { background-color: #f0f4f8; color: #1e3d58; }
+            .stButton>button { background-color: #007bff; color: white; }
+            .stMetric>div { background-color: #007bff; color: white; }
+            .stMarkdown { color: #007bff; }
+            .stSidebar { background-color: #003366; color: white; }
+        </style>
+    """,
+    "Dark Mode": """
+        <style>
+            body { background-color: #181818; color: #f5f5f5; }
+            .stButton>button { background-color: #1e1e1e; color: #f5f5f5; }
+            .stMetric>div { background-color: #1e1e1e; color: #f5f5f5; }
+            .stMarkdown { color: #f5f5f5; }
+            .stSidebar { background-color: #121212; color: white; }
+        </style>
+    """,
+    "Sunset Orange": """
+        <style>
+            body { background-color: #ffe0e0; color: #f44336; }
+            .stButton>button { background-color: #f44336; color: white; }
+            .stMetric>div { background-color: #f44336; color: white; }
+            .stMarkdown { color: #f44336; }
+            .stSidebar { background-color: #ff7043; color: white; }
+        </style>
+    """,
+    "Forest Green": """
+        <style>
+            body { background-color: #f0f8f0; color: #388e3c; }
+            .stButton>button { background-color: #388e3c; color: white; }
+            .stMetric>div { background-color: #388e3c; color: white; }
+            .stMarkdown { color: #388e3c; }
+            .stSidebar { background-color: #2c6b2f; color: white; }
+        </style>
+    """,
+    "Ocean Breeze": """
+        <style>
+            body { background-color: #e0f7fa; color: #00796b; }
+            .stButton>button { background-color: #00796b; color: white; }
+            .stMetric>div { background-color: #00796b; color: white; }
+            .stMarkdown { color: #00796b; }
+            .stSidebar { background-color: #004d40; color: white; }
+        </style>
+    """,
+    "Purple Haze": """
+        <style>
+            body { background-color: #f3e5f5; color: #9c27b0; }
+            .stButton>button { background-color: #9c27b0; color: white; }
+            .stMetric>div { background-color: #9c27b0; color: white; }
+            .stMarkdown { color: #9c27b0; }
+            .stSidebar { background-color: #7b1fa2; color: white; }
+        </style>
+    """,
+    "Coral Red": """
+        <style>
+            body { background-color: #ffebee; color: #e57373; }
+            .stButton>button { background-color: #e57373; color: white; }
+            .stMetric>div { background-color: #e57373; color: white; }
+            .stMarkdown { color: #e57373; }
+            .stSidebar { background-color: #f44336; color: white; }
+        </style>
+    """,
+    "Mint Green": """
+        <style>
+            body { background-color: #e8f5e9; color: #4caf50; }
+            .stButton>button { background-color: #4caf50; color: white; }
+            .stMetric>div { background-color: #4caf50; color: white; }
+            .stMarkdown { color: #4caf50; }
+            .stSidebar { background-color: #388e3c; color: white; }
+        </style>
+    """,
+    "Lavender Bliss": """
+        <style>
+            body { background-color: #f3e5f5; color: #8e24aa; }
+            .stButton>button { background-color: #8e24aa; color: white; }
+            .stMetric>div { background-color: #8e24aa; color: white; }
+            .stMarkdown { color: #8e24aa; }
+            .stSidebar { background-color: #7b1fa2; color: white; }
+        </style>
+    """,
+    "Golden Yellow": """
+        <style>
+            body { background-color: #fff9c4; color: #fbc02d; }
+            .stButton>button { background-color: #fbc02d; color: white; }
+            .stMetric>div { background-color: #fbc02d; color: white; }
+            .stMarkdown { color: #fbc02d; }
+            .stSidebar { background-color: #f57f17; color: white; }
+        </style>
+    """
+}
 
 # Streamlit App Title with custom font
 st.title("📊 GBP/JPY Live Trading Dashboard")
+
+# Color theme selector
+theme_choice = st.selectbox("Select a Theme:", list(themes.keys()))
+
+# Apply the selected theme
+st.markdown(themes[theme_choice], unsafe_allow_html=True)
 
 # Function to simulate live data for GBP/JPY price
 def get_fake_data():
