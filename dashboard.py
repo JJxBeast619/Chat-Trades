@@ -84,6 +84,19 @@ with col2:
     else:
         st.write("No recent news found.")
 
+# Live Orders Table
+st.subheader("📑 Live Open Trades")
+def get_fake_trades():
+    return pd.DataFrame({
+        "Trade ID": [101, 102, 103],
+        "Type": ["Buy", "Sell", "Buy"],
+        "Price": [150.25, 150.75, 151.00],
+        "Profit/Loss": [50, -20, 75]
+    })
+
+trades = get_fake_trades()
+st.dataframe(trades)
+
 # Account Value Over Time Graph
 st.subheader("Account Value Over Time")
 account_values = [10000 + (i * 50) for i in range(50)]
