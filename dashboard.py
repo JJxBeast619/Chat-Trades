@@ -1,3 +1,4 @@
+import MetaTrader5 as mt5
 import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
@@ -23,14 +24,24 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Function to simulate live data (replace with real-time data later)
-def get_fake_data():
-    return pd.DataFrame({
-        "Time": pd.date_range(start="2025-03-01", periods=50, freq='T'),
-        "Price": [150 + i * 0.1 for i in range(50)]
-    })
+# Initialize MT5 and check the connection
+if not mt5.initialize():
+    st.error("Failed to initialize MetaTrader 5. Please check the connection.")
+else:
+    st.write("Connected to MetaTrader 5 successfully!")
 
-data = get_fake_data()
+# Function to get live data from MetaTrader 5 for GBP/JPY
+def get_live_data():
+    # Get last 50 data points (replace with any number or range of data you need)
+    rates = mt5.copy_rates_from_pos("GBPJPY", mt5.TIMEFRAME_M1, 0, 50)
+    # Convert to pandas DataFrame
+    rates_frame = pd.DataFrame(rates)
+    # Convert timestamps to datetime
+    rates_frame['Time'] = pd.to_datetime(rates_frame['time'], unit='s')
+    return rates_frame
+
+# Fetch live data from MT5
+data = get_live_data()
 
 # Layout: Trading Metrics and News Side by Side
 st.title("📊 GBP/JPY Live Trading Dashboard")
@@ -45,7 +56,7 @@ with col1:
 with col2:
     st.subheader("📢 Financial News on GBP/JPY")
     def get_forex_news():
-        api_key = "YOUR_NEWSAPI_KEY"
+        api_key = "YOUR_NEWSAPI_KEY"  # Replace with your valid NewsAPI key
         url = f"https://newsapi.org/v2/everything?q=GBPJPY&sortBy=publishedAt&apiKey={api_key}"
         response = requests.get(url)
         if response.status_code == 200:
@@ -65,7 +76,7 @@ st.subheader("Live Open Trades")
 trades = pd.DataFrame({"Trade ID": [1, 2], "Type": ["Buy", "Sell"], "Price": [150.5, 151.0], "Profit": [10, -5]})
 st.dataframe(trades)
 
-# Account Value Over Time Graph
+# Account Value Over Time Graph (Simulated)
 st.subheader("Account Value Over Time")
 account_values = [10000 + (i * 50) for i in range(50)]
 account_data = pd.DataFrame({"Time": data["Time"], "Account Value": account_values})
@@ -79,6 +90,9 @@ st.plotly_chart(fig_account)
 # Display Price Chart
 st.subheader("Live GBP/JPY Price Chart")
 fig = go.Figure()
-fig.add_trace(go.Scatter(x=data["Time"], y=data["Price"], mode='lines', name='GBP/JPY Price'))
+fig.add_trace(go.Scatter(x=data["Time"], y=data["close"], mode='lines', name='GBP/JPY Price'))
 fig.update_layout(xaxis_title="Time", yaxis_title="Price")
 st.plotly_chart(fig)
+
+# Make sure to shut down MT5 after you finish
+mt5.shutdown()
