@@ -39,8 +39,10 @@ background_color = theme_colors.get(theme, "#f5f5f5")
 st.markdown(
     f"""
     <style>
-        body {{
+        .main {{
             background-color: {background_color} !important;
+            padding: 10px;
+            border-radius: 10px;
         }}
     </style>
     """,
