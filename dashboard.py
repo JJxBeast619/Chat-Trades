@@ -101,4 +101,8 @@ fig_account.update_layout(title="Account Value Over Time", xaxis_title="Time", y
 st.plotly_chart(fig_account)
 
 # Display Price Chart
-st.subheader("Live GBP/JPY Price Chart"
+st.subheader("Live GBP/JPY Price Chart")
+fig = go.Figure()
+fig.add_trace(go.Scatter(x=data["Time"], y=data["Price"], mode='lines', name='GBP/JPY Price'))
+fig.update_layout(xaxis_title="Time", yaxis_title="Price")
+st.plotly_chart(fig)
