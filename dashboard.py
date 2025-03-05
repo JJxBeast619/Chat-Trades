@@ -84,17 +84,9 @@ with col2:
     else:
         st.write("No recent news found.")
 
-# Live Orders Table
-st.subheader("📑 Live Open Trades")
-def get_fake_trades():
-    return pd.DataFrame({
-        "Trade ID": [101, 102, 103],
-        "Type": ["Buy", "Sell", "Buy"],
-        "Price": [150.25, 150.75, 151.00],
-        "Profit/Loss": [50, -20, 75]
-    })
-
-trades = get_fake_trades()
+# Live Open Trades Table
+st.subheader("Live Open Trades")
+trades = pd.DataFrame({"Trade ID": [1, 2], "Type": ["Buy", "Sell"], "Price": [150.5, 151.0], "Profit": [10, -5]})
 st.dataframe(trades)
 
 # Account Value Over Time Graph
@@ -109,8 +101,4 @@ fig_account.update_layout(title="Account Value Over Time", xaxis_title="Time", y
 st.plotly_chart(fig_account)
 
 # Display Price Chart
-st.subheader("Live GBP/JPY Price Chart")
-fig = go.Figure()
-fig.add_trace(go.Scatter(x=data["Time"], y=data["Price"], mode='lines', name='GBP/JPY Price'))
-fig.update_layout(xaxis_title="Time", yaxis_title="Price")
-st.plotly_chart(fig)
+st.subheader("Live GBP/JPY Price Chart"
