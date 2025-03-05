@@ -23,32 +23,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Theme selector
-theme = st.selectbox("Select Theme", ["Light", "Dark", "Blue", "Purple"])
-
-# Apply theme colors dynamically using CSS
-theme_colors = {
-    "Light": "#f5f5f5",
-    "Dark": "#2e2e2e",
-    "Blue": "#0d6efd",
-    "Purple": "#6a0dad"
-}
-
-background_color = theme_colors.get(theme, "#f5f5f5")
-
-st.markdown(
-    f"""
-    <style>
-        .main {{
-            background-color: {background_color} !important;
-            padding: 10px;
-            border-radius: 10px;
-        }}
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
 # Function to simulate live data (replace with real-time data later)
 def get_fake_data():
     return pd.DataFrame({
